@@ -1,0 +1,19 @@
+# Basic server properties
+server:
+  port: ${DISCOVERY_PORT:8761}
+
+# Basic spring properties
+spring:
+  # Application
+  application:
+    name: ${DISCOVERY_APPLICATION_NAME:discovery-service}
+
+# Basic actuator properties
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${ACTUATOR_ENDPOINTS:*}
+  endpoint:
+    health:
+      show-details: ${ACTUATOR_HEALTH_SHOW_DETAILS:always}
